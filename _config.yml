@@ -1,14 +1,15 @@
 # Site Info
 title:              "The Plain"
 description:        "The Plain is a Minimalist Jekyll theme that focuses on writing matters."
-google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
+google_site_verification:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
 
 # Author Info
-author_name:        "Heiswayi Nrird"
-author_email:       hnrird@gmail.com
-author_gravatar:    2b38b1b0e7e08b69379bd61582adf0c8 # Gravatar md5 hash
-twitter_username:   HeiswayiNrird
+author:
+  name:        "Heiswayi Nrird"
+  email:       hnrird@gmail.com
+  gravatar:    2b38b1b0e7e08b69379bd61582adf0c8 # Gravatar md5 hash
+  twitter:     HeiswayiNrird
 
 # Site texts
 texts:
@@ -41,6 +42,8 @@ include:            [ "robots.txt" ]
 exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
 gems:
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
 
 compress_html:
     clippings:      all
