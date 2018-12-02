@@ -1,30 +1,55 @@
 # Site Info
-title:              "The Plain"
-description:        "The Plain is a Minimalist Jekyll theme that focuses on writing matters."
-google_site_verification:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
+title:              "ساده"
+description:        "ساده یک تم جکیل است که محتوا را در مرکز قرار میدهد. با فابلیت پادکست و پست لینکی."
+google_site_verification:       # Put your Google Verification here
 google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
 
 # Author Info
 author:
-  name:        "Heiswayi Nrird"
-  email:       hnrird@gmail.com
-  gravatar:    2b38b1b0e7e08b69379bd61582adf0c8 # Gravatar md5 hash
-  twitter:     HeiswayiNrird
+  name:        Name
+  email:       name@email.com
+  gravatar:    2b38b1b0e7e08b69379bd61582adf0c8 # Gravatar md5 hash (http://www.miraclesalad.com/webtools/md5.php)
+  twitter:     account
+
+# Social networks (contact)
+social:
+  -
+    name: درباره
+    url: /about
+    font_awesome: twitter-square
+  -
+    name: ایمیل
+    url: mailto:
+    font_awesome: envelope
+  -
+    name: پادکست
+    url: /subscribe
+    font_awesome: podcast
+
+# Podcast config
+podcast:
+  cover_art: /public/mehsen-podcast-1500.jpg
+  statistics_prefix: # http://media.blubrry.com/<id>/
 
 # Site texts
 texts:
   about_author:     "درباره نویسنده" # About The Author
   back_home:        "بازگشت به خانه" # Back to Home
   back:             "بازگشت" # Back
+  see_more:         "دیدن باقی..." # See More Posts
+  posts:            "ده پست آخر:" # Last <home_post_count> posts
 
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /notes/:title # Post permalink
+permalink:          /posts/:title # Post permalink
 enforce_ssl:        "" # Leave empty if your domain doesn't have https, write the domain if it has
-timezone:           Asia/Kuala_Lumpur # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           Asia/Tehran # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+date_format:        "%b %d, %Y"
 direction:          rtl # Text direction. ltr/rtl
 lang:               fa # http://www.w3schools.com/tags/ref_language_codes.asp
-header_image:       "gravatar" # "gravatar" or url to an image
+header_image:       /public/top.jpg # "gravatar" or url to an image
+home_post_count:    10
+disqus:             'mehsen'
 
 # Site Build
 highlighter:        rouge
@@ -40,11 +65,8 @@ sass:
 # Other Params
 include:            [ "robots.txt" ]
 exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
-gems:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-
+plugins:
+  - jekyll-github
 compress_html:
     clippings:      all
     ingore:

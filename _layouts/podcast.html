@@ -1,0 +1,89 @@
+---
+layout: default
+---
+<noscript>
+	<style>
+
+		article .footnotes {
+			display: block;
+		}
+
+	</style>
+</noscript>
+
+<article>
+
+	<div class="center">
+		<h1>{{ page.title }}</h1>
+		{% include post-links.html link=page.link video=page.video class='post-head' %}
+		<time>{{ page.date | date: '%B %-d, %Y' }}</time>
+	</div>
+	{% if page.podcast.mp3.file  %} {% assign mp3  = page.podcast.mp3.file  %} {% endif %}
+	{% if page.podcast.ogg.file  %} {% assign ogg  = page.podcast.ogg.file  %} {% endif %}
+	{% if page.podcast.opus.file %} {% assign opus = page.podcast.opus.file %} {% endif %}
+	{% if page.podcast.aac.file  %} {% assign aac  = page.podcast.aac.file  %} {% endif %}
+
+	{% if site.podcast.statistics_prefix and jekyll.environment == 'production' %}
+		{% assign prefix = site.podcast.statistics_prefix %}
+		{% if mp3  %} {% assign mp3  = mp3  | remove_first: 'https://' | remove_first: 'http://' | prepend: prefix %} {% endif %}
+		{% if ogg  %} {% assign ogg  = ogg  | remove_first: 'https://' | remove_first: 'http://' | prepend: prefix %} {% endif %}
+		{% if opus %} {% assign opus = opus | remove_first: 'https://' | remove_first: 'http://' | prepend: prefix %} {% endif %}
+		{% if aac  %} {% assign aac  = aac  | remove_first: 'https://' | remove_first: 'http://' | prepend: prefix %} {% endif %}
+	{% endif %}
+
+	<div class="divider"></div>
+	<div class="player-container">
+	<img src="{{ page.podcast.image | default: site.podcast.cover_art | prepend: site.baseurl }}" />
+	<audio preload="metadata" id="podcast-player" controls>
+		{% if opus %}
+		<source src="{{ opus }}" type="audio/ogg; codecs=opus">
+		{% endif %}{% if ogg  %}
+		<source src="{{ ogg }}" type="audio/ogg; codecs=vorbis">
+		{% endif %}{% if mp3  %}
+		<source src="{{ mp3 }}" type="audio/mpeg">
+		{% endif %}{% if aac %}
+		<source src="{{ aac }}" type="audio/mp4">
+		{% endif %}
+		Your browser does not support the audio element. Here's download links: {% if mp3 %}<a href="{{ mp3 }}" download>Download MP3</a> / {% endif %}{% if aac %}<a href="{{ aac }}" download>Download AAC</a> / {% endif %}{% if ogg %}<a href="{{ ogg }}" download>Download OGG</a> / {% endif %}{% if opus %}<a href="{{ opus }}" download>Download OPUS</a>{% endif %}
+	</audio>
+	</div>
+	<div id="description">
+	{{ content }}
+	</div>
+	<div id="downloads">
+	دانلود: {% if mp3 %}<a href="{{ mp3 }}" download>MP3</a> / {% endif %}{% if aac %}<a href="{{ aac }}" download>AAC</a> / {% endif %}{% if ogg %}<a href="{{ ogg }}" download>OGG Vorbis</a> / {% endif %}{% if opus %}<a href="{{ opus }}" download>OPUS</a>{% endif %}
+	</div>
+</article>
+
+{% include disqus.html %}
+
+<div class="back">
+	<a href="{{site.baseurl}}/">{{ site.texts.back }}</a>
+</div>
+
+<script>
+var audio = document.getElementById('podcast-player');
+var des = document.getElementById('description');
+
+des.innerHTML = des.innerHTML.replace(/\d\d:\d\d/g, function (x) {
+  var a = x.split(':');
+  var seconds;
+  if (a.length == 2) {
+    seconds = (+a[0]) * 60 + (+a[1]); 
+  } else if (a.length == 3) {
+    seconds = (+a[0]) * 3600 + (+a[1]) * 60 + (+a[2]); 
+  }
+  return '<a href="#' + seconds + '">' + x + '</a>';
+});
+
+window.addEventListener("hashchange", function () {
+  audio.currentTime = parseInt(window.location.hash.slice(1));
+  audio.play();
+});
+
+if (window.location.hash) {
+  audio.oncanplay = function() {
+    audio.currentTime = parseInt(window.location.hash.slice(1));
+  };
+}
+</script>

@@ -9,11 +9,13 @@
 	{% endif %}
 
 	<a href="{{ link | prepend: site.baseurl }}">
-		<img src="{% if site.header_image == 'gravatar' %}
-								http://www.gravatar.com/avatar/{{ site.author.gravatar }}.png?s=80
-							{% else %}
-								{{ site.header_image }}
-							{% endif %}" class="gravatar">
+	{% if site.header_image == 'gravatar' %}
+		{% assign img = 'http://www.gravatar.com/avatar/'  %}
+		{% assign img = img | append: site.author.gravatar | append: '.png' %}
+	{% else %}
+		{% assign img = site.header_image %}
+	{% endif %}
+		<img src="{{ img }}" class="gravatar">
 	</a>
 	<span class="logo-prompt">{{ prompt }}</span>
 

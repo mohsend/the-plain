@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<section>
+	<ul>
+
+		{% for post in site.posts %}
+			{% if post.podcast %}
+				{% assign ptype = 'title="پادکست صوتی" class="podcast-post"' %}
+			{% elsif post.video %}
+				{% assign ptype = 'title="ویدیو" class="video-post"' %}
+			{% else %}
+				{% assign ptype = 'title="متن" class="text-post"' %}
+			{% endif %}
+		<li>
+			<div class="post-date">
+				<span>{{ post.date | date: "%b %d, %Y" }}</span>
+			</div>
+			<div class="title">
+				<a href="{{ post.url | prepend: site.baseurl }}" {{ ptype }}>{{ post.title }}</a>
+				{% include post-links.html link=post.link video=post.video class='inline' %}
+			</div>
+		</li>
+
+		{% endfor %}
+
+	</ul>
+</section>
