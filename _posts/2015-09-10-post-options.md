@@ -7,10 +7,10 @@ layout: podcast # post / podcast / video
 podcast:
   explicit: no # default: no
   block: no # default: no
-  duration: 1836 # duration in seconds
-  keywords: Myths, Legends, Talk, اسطوره, افسانه, گپ, خودمونی
-  summary: یه گپ خودمونی بین محسن و پویا، بیشتر در مورد داستان و اسطوره
-  image: /public/posts/mehsen-kary-001-myths.jpg
+  duration: 711 # duration in seconds
+  keywords: RIMSKY KORSAKOV, Scheherazade
+  summary: RIMSKY-KORSAKOV: Scheherazade The Young Prince and the Young Princess
+  image: https://archive.org/download/RIMSKY-KORSAKOVScheherazade1964/Stokowski21_thumb.jpg
   mp3:
     file: https://archive.org/download/RIMSKY-KORSAKOVScheherazade1964/03.3.TheYoungPrinceAndTheYoungPrincess.mp3
     size: 19013084 # file size in bytes
