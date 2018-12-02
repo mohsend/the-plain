@@ -19,7 +19,7 @@ social:
     font_awesome: twitter-square
   -
     name: ایمیل
-    url: mailto:
+    url: mailto:name@email.com
     font_awesome: envelope
   -
     name: پادکست

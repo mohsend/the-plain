@@ -1,4 +1,4 @@
-# The Plain Persian
+# [The Plain Persian](http://mohsend.github.io/the-plain/)
 
 A minimalistic Jekyll Blog and Podcast theme.
 
