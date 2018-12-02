@@ -2,8 +2,8 @@
 title: تمامی آپشن های پست
 updated: 2015-09-10 10:38
 category: conversation
-tags: Podcast, Conversation, Myths, اسطوره
-layout: podcast
+tags: نمونه, آپشن
+layout: podcast # post / podcast / video
 podcast:
   explicit: no # default: no
   block: no # default: no
@@ -12,55 +12,55 @@ podcast:
   summary: یه گپ خودمونی بین محسن و پویا، بیشتر در مورد داستان و اسطوره
   image: /public/posts/mehsen-kary-001-myths.jpg
   mp3:
-    file: http://archive.org/download/mehsen-kary-001-myths/mehsen-kary-001-myths.mp3
-    size: 12514507 # file size in bytes
+    file: https://archive.org/download/RIMSKY-KORSAKOVScheherazade1964/03.3.TheYoungPrinceAndTheYoungPrincess.mp3
+    size: 19013084 # file size in bytes
   ogg:
-    file: http://archive.org/download/mehsen-kary-001-myths/mehsen-kary-001-myths.ogg
-    size: 16119097 # file size in bytes
+    file: https://archive.org/download/RIMSKY-KORSAKOVScheherazade1964/03.3.TheYoungPrinceAndTheYoungPrincess.ogg
+    size: 7824973 # file size in bytes
 video:
-  youtube_id: AzV1yaQEmkE
-  aparat_id: ep743
-link:
+  youtube_id: 2an_WWubKmU
+  aparat_id: AklcB
+link: https://archive.org/details/RIMSKY-KORSAKOVScheherazade1964
 comment: yes # default: yes
 ---
 در این پست تمامی آپشن های ممکن یک پست استفاده شده. راهنمایی استفاده از تمامی آنها:
 
-## `title`
+## title
 
-## `updated`
+## updated
 
-## `category`
+## category
 
-## `tags`
+## tags
 
-## `layout`
+## layout
 
-## `podcast`
+## podcast
 
-### `explicit`
+### explicit
 
-### `block`
+### block
 
-### `duration`
+### duration
 
-### `keywords`
+### keywords
 
-### `summary`
+### summary
 
-### `image`
+### image
 
-### `mp3` \ `aac` \ `opus` \ `ogg`
+### mp3 \ aac \ opus \ ogg
 
-#### `file`
+#### file
 
-#### `size`
+#### size
 
-## `video`
+## video
 
-### `youtube_id`
+### youtube_id
 
-### `aparat_id`
+### aparat_id
 
-## `link`
+## link
 
-## `comment`
+## comment
