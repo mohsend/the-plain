@@ -40,7 +40,7 @@ texts:
   posts:            "ده پست آخر:" # Last <home_post_count> posts
 
 # Site Settings
-baseurl:            "the-plain" # Base URL must end WITHOUT a slash, default: ""
+baseurl:            "/the-plain" # Base URL must end WITHOUT a slash, default: ""
 permalink:          /posts/:title # Post permalink
 enforce_ssl:        "" # Leave empty if your domain doesn't have https, write the domain if it has
 timezone:           Asia/Tehran # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
