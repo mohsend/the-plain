@@ -1,8 +1,8 @@
 ---
-title: تمامی آپشن های پست
+title: "تمامی آپشن های پست"
 updated: 2015-09-10 10:38
 category: conversation
-tags: نمونه, آپشن
+tags: نمونه, آپشن, پست
 layout: podcast # post / podcast / video
 podcast:
   explicit: no # default: no
